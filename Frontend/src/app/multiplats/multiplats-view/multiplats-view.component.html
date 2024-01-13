@@ -3,19 +3,19 @@
   <div class="card-body row">
     <div class="col-6 mb-2">
       <label class="mb-2" for="city">City</label>
-      <input class="form-control" id="city" type="text">
+      <input [(ngModel)]="multiPlatsDTO.city.cityName" class="form-control" id="city" type="text">
     </div>
     <div class="col-6 mb-2">
       <label class="mb-2" for="school">School</label>
-      <input class="form-control" id="school" type="text">
+      <input [(ngModel)]="multiPlatsDTO.school.schoolName" class="form-control" id="school" type="text">
     </div>
     <div class="col-6 mb-2">
       <label class="mb-2" for="grade">Grade</label>
-      <input class="form-control" id="grade" type="text">
+      <input [(ngModel)]="multiPlatsDTO.grade.gradeName" class="form-control" id="grade" type="text">
     </div>
     <div class="col-6 mb-2">
       <label class="mb-2" for="NumOfStudents">Number of students</label>
-      <input class="form-control" id="NumOfStudents" type="text">
+      <input [(ngModel)]="multiPlatsDTO.grade.numberOfStudents" class="form-control" id="NumOfStudents" type="number">
     </div>
   </div>
   <div class="card-footer d-flex justify-content-center gap-2">
