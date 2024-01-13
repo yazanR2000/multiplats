@@ -21,7 +21,7 @@ public class Students {
     @Column(nullable = false)
     private String studentsName;
 
-    @ManyToOne(targetEntity = City.class)
+    @ManyToOne(targetEntity = Grade.class)
     @JoinColumn(name = "grade",referencedColumnName = "gradeId", nullable = false)
     private Grade grade;
 }
