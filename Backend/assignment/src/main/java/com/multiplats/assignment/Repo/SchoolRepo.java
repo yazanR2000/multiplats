@@ -10,6 +10,6 @@ import com.multiplats.assignment.Model.School;
 public interface SchoolRepo extends JpaRepository<School,Long> {
     
 
-    @Query("SELECT s from School as s where s.city=:cityId")
+    @Query("SELECT s from School as s where s.city.cityId=:cityId")
     List<School> findSchoolsByCityId(Long cityId);
 } 

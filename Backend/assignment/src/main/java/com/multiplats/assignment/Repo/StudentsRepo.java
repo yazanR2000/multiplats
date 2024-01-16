@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.multiplats.assignment.Model.Students;
 
 public interface StudentsRepo extends JpaRepository<Students,Long> {
-    @Query("SELECT n from Students as n where n.grade=:gradeId")
+    @Query("SELECT n from Students as n where n.grade.gradeId=:gradeId")
     List<Students> findStudentsByGradeId(Long gradeId);
 } 

@@ -18,6 +18,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/multiplats")
+@CrossOrigin("*")
 public class MultiPlatsController {
     private final CityService cityService;
     private final SchoolService schoolService;
@@ -65,9 +67,9 @@ public class MultiPlatsController {
         } 
     }
     @GetMapping("/grades/{schoolId}")
-    public ResponseEntity<?> findAllGradesBySchoolId(@PathVariable Long schoolId) {
+    public ResponseEntity<?> findAllGradesBySchoolId(@PathVariable String schoolId) {
         try{
-            List<Grade> grades = gradeService.findGradesBySchoolId(schoolId);
+            List<Grade> grades = gradeService.findGradesBySchoolId(Long.valueOf(schoolId));
             return new ResponseEntity<>(grades,HttpStatus.OK);
         }catch(Exception err){
             return new ResponseEntity<>("OPPS!",HttpStatus.BAD_REQUEST);
@@ -75,9 +77,9 @@ public class MultiPlatsController {
         } 
     }
     @GetMapping("/students/{gradeId}")
-    public ResponseEntity<?> findAllStudentsByGradeId(@PathVariable Long gradeId) {
+    public ResponseEntity<?> findAllStudentsByGradeId(@PathVariable String gradeId) {
         try{
-            List<Students> students = studentsService.findAllStudentsByGradeId(gradeId);
+            List<Students> students = studentsService.findAllStudentsByGradeId(Long.valueOf(gradeId));
             return new ResponseEntity<>(students,HttpStatus.OK);
         }catch(Exception err){
             return new ResponseEntity<>("OPPS!",HttpStatus.BAD_REQUEST);

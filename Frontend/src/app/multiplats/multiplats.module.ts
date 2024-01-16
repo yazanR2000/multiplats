@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MultiplatsSaveComponent } from './multiplats-save/multiplats-save.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MultiplatsViewComponent } from './multiplats-view/multiplats-view.component';
-import { FormsModule } from '@angular/forms';
+import { MultiplatsSaveComponent } from './multiplats-save/multiplats-save.component';
 
 
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     MultiplatsSaveComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule, 
     FormsModule
   ]
 })

@@ -1,6 +1,6 @@
 <div class="card w-50 m-auto">
   <div class="card-header">Add Page</div>
-  <div class="card-body row">
+  <div [ngClass]="{'disabled': !activate}" class="card-body row">
     <div class="col-6 mb-2">
       <label class="mb-2" for="city">City</label>
       <input [(ngModel)]="multiPlatsDTO.city.cityName" class="form-control" id="city" type="text">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="card-footer d-flex justify-content-center gap-2">
-    <button class="btn btn-dark">Save</button>
-    <button class="btn btn-dark">New</button>
+    <button class="btn btn-dark" [disabled]="!activate" (click)="save()">Save</button>
+    <button class="btn btn-dark" [disabled]="activate" (click)="toggle()">New</button>
   </div>
 </div>
